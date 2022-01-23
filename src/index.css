@@ -42,6 +42,7 @@ html {
   }
 }
 
+/* Full width, 10vh, no scaling other than that necessary */
 .header {
   width: 100vw;
   background: #663333;
@@ -53,6 +54,7 @@ html {
   height: 10vh;
 }
 
+/* Messages container, flexbox column for messages moving down */
 .messages {
   width: 100vw;
   height: 80vh;
@@ -64,6 +66,7 @@ html {
   box-sizing: border-box;
 }
 
+/* Specific message formatting */
 .message {
   width: 100%;
   height: auto;
@@ -72,11 +75,13 @@ html {
   flex-direction: row;
 }
 
+/* Format user screen-name */
 .user {
   color: #AA5555;
   margin-right: 5px;
 }
 
+/* Bottom of page */
 .footer {
   width: 100vw;
   height: 10vh;
@@ -85,6 +90,7 @@ html {
   padding: 2vh 2vw;
 }
 
+/* Main input and send button container */
 .compose {
   width: 100%;
   height: 100%;
@@ -98,6 +104,7 @@ html {
   flex-direction: row;
 }
 
+/* Input window for message */
 input {
   width: 100%;
   height: 100%;
@@ -108,10 +115,12 @@ input {
   font-size: 1rem;
 }
 
+/* No blue focus when typing a message */
 input:focus {
   outline: none!important;
 }
 
+/* Specific formatting for send button */
 .send {
   height: 100%;
   background: white;
@@ -129,10 +138,12 @@ input:focus {
   cursor: pointer;
 }
 
+/* NUL character needs to be larger than title */
 .nul {
   font-size: 5.5rem;
 }
 
+/* Sizing of title text */
 .title {
   font-size: 4rem;
 }
