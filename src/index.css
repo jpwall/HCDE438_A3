@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 415px) {
+  html {
+      font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+      font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  html {
+      font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  html {
+      font-size: 31px;
+  }
+}
+
+.header {
+  width: 100vw;
+  background: #663333;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 2vh 2vw;
+  min-height: fit-content;
+  height: 10vh;
+}
+
+.messages {
+  width: 100vw;
+  height: 80vh;
+  background: #444444;
+  padding: 0vh 2vw;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+.message {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.user {
+  color: #AA5555;
+  margin-right: 5px;
+}
+
+.footer {
+  width: 100vw;
+  height: 10vh;
+  background: #663366;
+  box-sizing: border-box;
+  padding: 2vh 2vw;
+}
+
+.compose {
+  width: 100%;
+  height: 100%;
+  background: #333366;
+  color: white;
+  border: #663333 solid 2px;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  background: #333366;
+  color: white;
+  border-width: 0px;
+  border: none;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none!important;
+}
+
+.send {
+  height: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 5vw;
+  min-width: fit-content;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.nul {
+  font-size: 5.5rem;
+}
+
+.title {
+  font-size: 4rem;
+}
