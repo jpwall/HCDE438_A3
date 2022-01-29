@@ -93,13 +93,13 @@ html {
 /* Main input and send button container */
 .compose {
   width: 100%;
-  height: 100%;
+  height: 3rem;
   background: #333366;
   color: white;
   border: #663333 solid 2px;
   box-sizing: border-box;
   padding: 5px 5px 5px 20px;
-  border-radius: 20px;
+  border-radius: 1.5rem;
   display: flex;
   flex-direction: row;
 }
@@ -122,20 +122,24 @@ input:focus {
 
 /* Specific formatting for send button */
 .send {
-  height: 100%;
-  background: white;
+  height: 2.3rem;
+  width: fit-content;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  width: 5vw;
+  border-radius: 100%;
+  width: 2.3rem;
   min-width: fit-content;
   margin-left: 5px;
   padding-left: 5px;
   padding-right: 5px;
   font-size: 0.8rem;
   cursor: pointer;
+  border: none;
+  background: url("http://localhost:3000/send.png") no-repeat center;
+  background-color: white;
+  background-size: 80%;
 }
 
 /* NUL character needs to be larger than title */

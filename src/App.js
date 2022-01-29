@@ -17,7 +17,7 @@ function App() {
       <div class="footer">
         <div class="compose">
           <input type="textarea" placeholder="Write your message here..."/>
-          <div class="send">send</div>
+          <button class="send"></button>
         </div>
       </div>
     </div>
