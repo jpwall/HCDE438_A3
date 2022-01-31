@@ -2,6 +2,8 @@ import react from 'react'
 import "./Messages.css"
 
 class Messages extends react.Component {
+    // Utilize props for messages and current user, including a greeting
+    // Use Array.map to iterate through the messages and render them individually
     render() {
         return <div class="messages">
             <div class="message">

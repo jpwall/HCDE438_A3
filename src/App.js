@@ -6,16 +6,20 @@ import Messages from './Messages'
 class App extends react.Component {
   constructor(props) {
     super(props);
+    // Construct state to store messages and username
     this.state = {
       messages: [],
       user: "jpwall"
     };
   }
+  // Handle message from TextInput (callback)
   newMessage = (message) => {
+    // Store current list of messages
     let toUpdate = this.state.messages
+    // Add new message
     toUpdate.push(message)
+    // Update the state
     this.setState({messages: toUpdate})
-    console.log(toUpdate)
   }
   render() {
     return <div className="App">
