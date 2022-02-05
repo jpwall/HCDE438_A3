@@ -21,7 +21,9 @@ class TextInput extends react.Component {
         // Pass to callback handler
         this.props.sendMessage(messageData)
         // Reset text input
-        this.state.text = ""
+        this.setState({text: ""})
+        // TODO: Use setState; isn't guaranteed to happen how expected
+        //  Gives option of callback once state has been set
     }
 
     // Check for key presses and send if enter is pressed
@@ -29,13 +31,18 @@ class TextInput extends react.Component {
         if (e.key == "Enter") {
             this.send()
         } else {
-            this.state.text = e.target.value
+            this.setState({text:e.target.value})
         }
     }
     render() {
         return <div class="compose">
+            <button class="send" onClick={this.props.showCamera}>
+                <img src="http://localhost:3000/cam.png"/>
+            </button>
             <input type="textarea" value={this.state.text} onChange={(e) => this.setState({text:e.target.value})} onKeyPress={this.onKeyPress} placeholder="Write your message here..."/>
-            <button class="send" onClick={this.send}></button>
+            <button class="send" onClick={this.send}>
+                <img src="http://localhost:3000/send.png"/>
+            </button>
         </div>
     }
 }

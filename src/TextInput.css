@@ -6,7 +6,7 @@
   color: white;
   border: #663333 solid 2px;
   box-sizing: border-box;
-  padding: 5px 5px 5px 20px;
+  padding: 5px 5px 5px 5px;
   border-radius: 1.5rem;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@ input:focus {
 /* Specific formatting for send button */
 .send {
   height: 2.3rem;
-  width: fit-content;
+  width: 2.3rem;
   color: black;
   display: flex;
   align-items: center;
@@ -45,7 +45,12 @@ input:focus {
   font-size: 0.8rem;
   cursor: pointer;
   border: none;
-  background: url("http://localhost:3000/send.png") no-repeat center;
+  overflow: hidden;
   background-color: white;
   background-size: 80%;
+}
+
+img {
+  width: 1.8rem;
+  height: auto;
 }
