@@ -2,6 +2,7 @@ import react from 'react'
 import './App.css';
 import TextInput from './TextInput'
 import Messages from './Messages'
+import NamePicker from './NamePicker'
 import Camera from 'react-snap-pic'
 
 class App extends react.Component {
@@ -35,14 +36,22 @@ class App extends react.Component {
     this.setState({showCamera:false})
   }
 
+  // function to update username when sent from NamePicker
+  updateUser = (user) => {
+    this.setState({user:user})
+  }
+
   render() {
     return <div className="App">
       <header className="header">
-        <div class="nul">␀</div> <div class="title">Chat</div>
+        <div className="nulCont">
+          <div class="nul">␀</div> <div class="title">Chat</div>
+        </div>
+        <NamePicker curUser={this.state.user} changeUser={this.updateUser} />
       </header>
       <Messages messages={this.state.messages} user={this.state.user}/>
       <div class="footer">
-        <TextInput sendMessage={this.newMessage} showCamera={this.toggleCamera}/>
+        <TextInput curUser={this.state.user} sendMessage={this.newMessage} showCamera={this.toggleCamera}/>
         {this.state.showCamera && <Camera takePicture={this.takePicture}/>}
       </div>
     </div>

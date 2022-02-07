@@ -15,7 +15,7 @@ class TextInput extends react.Component {
         // Construct a message object with text contents, user, and timestamp (ms since epoch)
         let messageData = {
             text: this.state.text,
-            user: "jpwall",
+            user: this.props.curUser,
             timestamp: new Date().getTime()
         }
         // Pass to callback handler
