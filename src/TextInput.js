@@ -1,5 +1,6 @@
 import "./TextInput.css"
 import react from "react";
+import { db } from "./db";
 
 class TextInput extends react.Component {
     constructor(props) {
@@ -10,20 +11,18 @@ class TextInput extends react.Component {
         }
     }
 
-    // Upon enter or clicking button, message is constructed and sent to App to be stored in state
+    // Upon enter or clicking button, message is constructed and sent to Firebase
     send = () => {
         // Construct a message object with text contents, user, and timestamp (ms since epoch)
         let messageData = {
             text: this.state.text,
             user: this.props.curUser,
-            timestamp: new Date().getTime()
+            time: new Date().getTime()
         }
-        // Pass to callback handler
-        this.props.sendMessage(messageData)
+        // Send to Firebase
+        db.send(messageData)
         // Reset text input
         this.setState({text: ""})
-        // TODO: Use setState; isn't guaranteed to happen how expected
-        //  Gives option of callback once state has been set
     }
 
     // Check for key presses and send if enter is pressed

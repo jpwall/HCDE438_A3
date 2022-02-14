@@ -4,25 +4,17 @@ import TextInput from './TextInput'
 import Messages from './Messages'
 import NamePicker from './NamePicker'
 import Camera from 'react-snap-pic'
+import DBLoad from './DBLoad' // Wrapper for class-based App.js
 
 class App extends react.Component {
   constructor(props) {
     super(props);
     // Construct state to store messages and username
     this.state = {
-      messages: [],
+      messages: props.otherMessages,
       user: "jpwall",
       showCamera: false
     };
-  }
-  // Handle message from TextInput (callback)
-  newMessage = (message) => {
-    // Store current list of messages
-    let toUpdate = this.state.messages
-    // Add new message
-    toUpdate.push(message)
-    // Update the state
-    this.setState({messages: toUpdate})
   }
 
   // function to turn on camera
@@ -37,8 +29,8 @@ class App extends react.Component {
   }
 
   // function to update username when sent from NamePicker
-  updateUser = (user) => {
-    this.setState({user:user})
+  updateUser = (usr) => {
+    this.setState({user:usr})
   }
 
   render() {
@@ -49,7 +41,7 @@ class App extends react.Component {
         </div>
         <NamePicker curUser={this.state.user} changeUser={this.updateUser} />
       </header>
-      <Messages messages={this.state.messages} user={this.state.user}/>
+      <Messages messages={this.props.otherMessages} user={this.state.user}/>
       <div class="footer">
         <TextInput curUser={this.state.user} sendMessage={this.newMessage} showCamera={this.toggleCamera}/>
         {this.state.showCamera && <Camera takePicture={this.takePicture}/>}
@@ -58,4 +50,4 @@ class App extends react.Component {
   };
 }
 
-export default App;
+export default DBLoad(App);
