@@ -28,16 +28,16 @@ class NamePicker extends react.Component {
     }
 
     render() {
+        // Yay for ternary statements!
         return <div>
-            {this.state.isEdit === false && // TODO: Figure out why this part isn't working
-                <button class="nameButton" onClick={this.setState({isEdit:true})}>{this.state.name}</button>
-            }
-            {this.state.isEdit && 
+            {this.state.isEdit ? (
                 <div styles="display:flex;flex-direction:row;">
                     <input class="nameEdit" type="text" value={this.state.name} onChange={(e) => this.setState({name:e.target.value})} onKeyPress={this.onKeyPress}/>
-                    <button class="updName" onClick={this.update}>Done</button>
-                </div>
-            }
+                <button class="updName" onClick={this.update}>✓</button>
+            </div>
+            ) : (
+                <button class="nameButton" onClick={(e) => this.setState({isEdit:true})}>{this.state.name} ✎</button>
+            )}
         </div>
     }
 }

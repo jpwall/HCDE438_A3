@@ -1,7 +1,23 @@
 .nameEdit {
-    width: 20vw;
+    width: 5rem;
+    box-sizing: border-box;
+    margin-right: 0.3rem;
 }
 
 .nameButton {
     cursor: pointer;
+}
+
+.updName {
+    background: #336633;
+    cursor: pointer;
+}
+
+button {
+    font-size: 0.8rem;
+    border: none;
+    background: #333366;
+    color: white;
+    box-sizing: border-box;
+    padding: 0.3rem;
 }
